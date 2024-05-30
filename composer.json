@@ -21,9 +21,12 @@
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
+        "drupal/jsonapi_extras": "^3.24",
+        "drupal/jsonapi_permission_access": "^1.0",
         "drupal/pathauto": "^1.12",
         "drupal/restui": "^1.21",
         "drupal/simple_oauth": "^5.2",
+        "drupal/smtp": "^1.2",
         "drupal/views_serialization_pager": "^1.1",
         "drush/drush": "^12.4"
     },

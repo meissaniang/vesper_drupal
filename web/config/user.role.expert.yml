@@ -1,0 +1,16 @@
+uuid: b082a116-d72f-4319-8fe7-925328e115ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - jsonapi_permission_access
+    - node
+id: expert
+label: Expert
+weight: 4
+is_admin: null
+permissions:
+  - 'access jsonapi routes'
+  - 'view page revisions'

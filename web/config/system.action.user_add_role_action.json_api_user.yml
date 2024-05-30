@@ -1,0 +1,14 @@
+uuid: 8eb1f777-962a-4f92-9485-730d4d815c39
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.json_api_user
+  module:
+    - user
+id: user_add_role_action.json_api_user
+label: 'Add the JSON:API User role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: json_api_user

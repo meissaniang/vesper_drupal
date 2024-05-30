@@ -23,7 +23,6 @@ web/module/**.*
 web/core/*
 web/sites/default/files/*
 web/modules/contrib/*
-web/config/
 # Ignore paths that contain user-generated content.
 web/sites/*/files
 web/sites/*/private

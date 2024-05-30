@@ -1,0 +1,29 @@
+uuid: d840a257-a630-4e68-95f5-a7cf8c48095a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - rest.resource.user_registration
+  module:
+    - comment
+    - contact
+    - filter
+    - jsonapi_permission_access
+    - rest
+    - search
+    - system
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access jsonapi routes'
+  - 'access site-wide contact form'
+  - 'restful post user_registration'
+  - 'search content'
+  - 'use text format restricted_html'

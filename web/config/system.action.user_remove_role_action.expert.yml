@@ -1,0 +1,14 @@
+uuid: 677f298c-d65f-4af3-adfb-bf9dc5446ddf
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.expert
+  module:
+    - user
+id: user_remove_role_action.expert
+label: 'Remove the Expert role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: expert

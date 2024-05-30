@@ -1,0 +1,21 @@
+uuid: da357f18-ba39-4b4f-a3bf-e190034fbf83
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_siren
+field_name: field_siren
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

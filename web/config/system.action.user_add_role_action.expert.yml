@@ -1,0 +1,14 @@
+uuid: 19f527e9-644e-41f1-b5f9-25f5ea3c3cba
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.expert
+  module:
+    - user
+id: user_add_role_action.expert
+label: 'Add the Expert role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: expert

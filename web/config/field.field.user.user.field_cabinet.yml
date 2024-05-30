@@ -1,0 +1,20 @@
+uuid: d1177f02-4ee5-451d-8a59-1f715c24abce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_cabinet
+  module:
+    - user
+id: user.user.field_cabinet
+field_name: field_cabinet
+entity_type: user
+bundle: user
+label: cabinet
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
