@@ -7,7 +7,7 @@ smtp_port: '587'
 smtp_protocol: tls
 smtp_autotls: true
 smtp_timeout: 30
-smtp_username: vadly
+smtp_username: vadly@applize.io
 smtp_password: vadly
 smtp_from: vadly@applize.io
 smtp_fromname: Vesper
