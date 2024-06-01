@@ -18,6 +18,8 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  email_registration: 0
+  email_registration_username: 0
   field: 0
   field_ui: 0
   file: 0
@@ -48,9 +50,11 @@ module:
   taxonomy: 0
   telephone: 0
   text: 0
+  token: 0
   toolbar: 0
   update: 0
   user: 0
+  user_registrationpassword: 0
   views_ui: 0
   views: 10
   standard: 1000
