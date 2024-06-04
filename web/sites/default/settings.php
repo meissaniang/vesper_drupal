@@ -710,7 +710,7 @@ $settings['update_free_access'] = FALSE;
  */
 # $config['system.site']['name'] = 'My Drupal site';
 # $config['user.settings']['anonymous'] = 'Visitor';
-
+$config['system.site']['uuid'] = '49d6d43d-aa09-46ec-b983-d84a7146e376';
 /**
  * Load services definition file.
  */
