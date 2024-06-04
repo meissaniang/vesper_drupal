@@ -893,3 +893,4 @@ $databases['default']['default'] = array (
   'autoload' => 'core/modules/pgsql/src/Driver/Database/pgsql/',
 );
 $settings['config_sync_directory'] = 'config';
+$config['system.logging']['error_level'] = 'verbose';

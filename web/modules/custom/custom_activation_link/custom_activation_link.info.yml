@@ -1,0 +1,7 @@
+name: 'Custom Activation Link'
+type: module
+description: 'Modifies user activation emails to include custom activation link.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:user

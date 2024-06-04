@@ -1,0 +1,31 @@
+<?php
+
+use Drupal\Core\Config\ConfigFactoryInterface;
+
+/**
+ * Implements hook_mail_alter().
+ */
+function custom_activation_link_mail_alter(&$message) {
+  // Vérifiez s'il s'agit de l'e-mail d'inscription de l'utilisateur.
+  if ($message['id'] == 'user_register_no_approval_required' || $message['id'] == 'user_register_pending_approval') {
+    // Assurez-vous que le corps est une chaîne.
+    $body = is_array($message['body']) ? implode("\n", $message['body']) : $message['body'];
+
+    // Récupérer l'URL du front-end à partir de la configuration.
+    $frontendUrl = 'https://localhost:5173';
+
+    // Extraire le lien d'activation actuel.
+    if (preg_match('/http[^\s]+user\/registrationpassword\/[0-9]+\/[^\s]+/', $body, $matches)) {
+      $original_link = $matches[0];
+
+      // Créer un lien personnalisé qui pointe vers le front-end.
+      $custom_link = $frontendUrl . '/activate?token=' . urlencode($original_link);
+
+      // Remplacer le lien d'origine par le lien personnalisé dans le corps de l'e-mail.
+      $body = str_replace($original_link, $custom_link, $body);
+
+      // Mettre à jour le corps du message.
+      $message['body'] = [$body];
+    }
+  }
+}
