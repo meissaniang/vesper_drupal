@@ -1,13 +1,13 @@
 _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
-uuid: 49d6d43d-aa09-46ec-b983-d84a7146e376
+uuid: 0e8a56f7-00a5-4152-b7cc-7a80e7cf6326
 name: vesper
 mail: vadly@applize.io
-slogan: ""
+slogan: ''
 page:
-  403: ""
-  404: ""
+  403: ''
+  404: ''
   front: /node
 admin_compact_mode: false
 weight_select_max: 100

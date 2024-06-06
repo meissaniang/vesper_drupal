@@ -41,6 +41,7 @@ module:
   path_alias: 0
   pgsql: 0
   rest: 0
+  rest_password_reset: 0
   restui: 0
   search: 0
   serialization: 0

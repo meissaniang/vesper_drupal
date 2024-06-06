@@ -25,6 +25,7 @@
         "drupal/jsonapi_extras": "^3.24",
         "drupal/jsonapi_permission_access": "^1.0",
         "drupal/pathauto": "^1.12",
+        "drupal/rest_password_reset": "^1.1",
         "drupal/restui": "^1.21",
         "drupal/simple_oauth": "^5.2",
         "drupal/smtp": "^1.2",

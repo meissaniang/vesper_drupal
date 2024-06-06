@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - filter.format.restricted_html
+    - rest.resource.rest_password_reset_link
+    - rest.resource.rest_password_reset_password
+    - rest.resource.rest_password_reset_username
     - rest.resource.user_registration
+    - rest.resource.user_registrationpassword
   module:
     - comment
     - contact
@@ -24,6 +28,10 @@ permissions:
   - 'access content'
   - 'access jsonapi routes'
   - 'access site-wide contact form'
+  - 'restful get rest_password_reset_link'
+  - 'restful get rest_password_reset_username'
+  - 'restful post rest_password_reset_password'
   - 'restful post user_registration'
+  - 'restful post user_registrationpassword'
   - 'search content'
   - 'use text format restricted_html'
