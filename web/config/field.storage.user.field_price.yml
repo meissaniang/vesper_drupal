@@ -1,17 +1,16 @@
-uuid: c041ffe8-cac3-4a5f-b11e-4c990ef065e1
+uuid: 1642f517-add5-4c1d-ba6e-479a166030b7
 langcode: en
 status: true
 dependencies:
   module:
     - user
-id: user.field_cabinet
-field_name: field_cabinet
+id: user.field_price
+field_name: field_price
 entity_type: user
-type: string
+type: decimal
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  precision: 10
+  scale: 2
 module: core
 locked: false
 cardinality: 1

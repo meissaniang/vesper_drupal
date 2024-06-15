@@ -1,20 +1,20 @@
-uuid: 7724d1cc-0545-4d57-9d8b-a560a46de1ca
+uuid: 732d3e4f-da57-4266-80a4-d9ef3e82980e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_siren
+    - field.storage.user.field_bio
   module:
     - user
-id: user.user.field_siren
-field_name: field_siren
+id: user.user.field_bio
+field_name: field_bio
 entity_type: user
 bundle: user
-label: siren
+label: bio
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: string_long

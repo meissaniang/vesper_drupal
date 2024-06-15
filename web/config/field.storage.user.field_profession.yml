@@ -1,11 +1,11 @@
-uuid: 3ac8000c-be7b-4012-9ffd-f01d48b76223
+uuid: 81de4100-3513-4467-b601-70cf9ea4b8a6
 langcode: en
 status: true
 dependencies:
   module:
     - user
-id: user.field_siren
-field_name: field_siren
+id: user.field_profession
+field_name: field_profession
 entity_type: user
 type: string
 settings:

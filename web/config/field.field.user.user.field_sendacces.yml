@@ -1,0 +1,22 @@
+uuid: 6a4cd7ab-9241-40ff-8c33-54a5c2629612
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_sendacces
+  module:
+    - user
+id: user.user.field_sendacces
+field_name: field_sendacces
+entity_type: user
+bundle: user
+label: sendAcces
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

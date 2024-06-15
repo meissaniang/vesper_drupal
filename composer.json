@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "drupal/access_policy": "^1.0@beta",
         "drupal/admin_toolbar": "^3.4",
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/core-composer-scaffold": "^10.2",

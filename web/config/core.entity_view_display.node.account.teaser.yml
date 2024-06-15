@@ -1,0 +1,32 @@
+uuid: 42ee4b77-3179-4cfe-b97e-fa6d225a817c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.account.body
+    - field.field.node.account.field_siren
+    - node.type.account
+  module:
+    - text
+    - user
+id: node.account.teaser
+targetEntityType: node
+bundle: account
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_siren: true

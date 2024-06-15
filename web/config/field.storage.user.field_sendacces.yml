@@ -1,17 +1,14 @@
-uuid: 3ac8000c-be7b-4012-9ffd-f01d48b76223
+uuid: a12c6c57-fbc2-4189-8e99-9ad12e091cf8
 langcode: en
 status: true
 dependencies:
   module:
     - user
-id: user.field_siren
-field_name: field_siren
+id: user.field_sendacces
+field_name: field_sendacces
 entity_type: user
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

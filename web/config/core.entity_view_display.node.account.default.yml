@@ -1,0 +1,37 @@
+uuid: b8de33f3-af99-406d-a44e-fe36e4e2816b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.account.body
+    - field.field.node.account.field_siren
+    - node.type.account
+  module:
+    - text
+    - user
+id: node.account.default
+targetEntityType: node
+bundle: account
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_siren:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

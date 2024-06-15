@@ -1,0 +1,6 @@
+services:
+  custom_activation_link.activate_user:
+    class: Drupal\custom_activation_link\Plugin\rest\resource\ActivateUser
+    arguments: ['@entity_type.manager', '@current_user']
+    tags:
+      - { name: rest.resource }

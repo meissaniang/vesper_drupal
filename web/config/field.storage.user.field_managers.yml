@@ -1,20 +1,18 @@
-uuid: 3ac8000c-be7b-4012-9ffd-f01d48b76223
+uuid: b803e35e-13bb-4381-a02f-0cddf7d46895
 langcode: en
 status: true
 dependencies:
   module:
     - user
-id: user.field_siren
-field_name: field_siren
+id: user.field_managers
+field_name: field_managers
 entity_type: user
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: user
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

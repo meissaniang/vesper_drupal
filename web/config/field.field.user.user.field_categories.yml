@@ -1,0 +1,30 @@
+uuid: 7239cc36-292d-4a21-83b4-c7b6199bfb21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_categories
+    - node.type.category
+  module:
+    - user
+id: user.user.field_categories
+field_name: field_categories
+entity_type: user
+bundle: user
+label: categories
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      category: category
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

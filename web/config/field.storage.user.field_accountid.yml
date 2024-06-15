@@ -1,17 +1,16 @@
-uuid: 3ac8000c-be7b-4012-9ffd-f01d48b76223
+uuid: 61d3e0c5-65e7-47ea-9006-f5ab5e8bf1fc
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - user
-id: user.field_siren
-field_name: field_siren
+id: user.field_accountid
+field_name: field_accountid
 entity_type: user
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: node
 module: core
 locked: false
 cardinality: 1

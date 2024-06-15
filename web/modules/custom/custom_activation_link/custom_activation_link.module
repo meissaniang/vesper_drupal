@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_mail_alter().

@@ -1,0 +1,97 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_account_help($route_name, $route_match) {
+  switch ($route_name) {
+    case 'help.page.custom_account':
+      return '<p>' . t('Custom Account module is enabled.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function custom_account_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'user') {
+    // Log to indicate the function is called.
+    \Drupal::logger('custom_account')->notice('User insert hook called.');
+
+    $user = $entity;
+    // Check if the user is new.
+    if ($user) {
+      \Drupal::logger('custom_account')->notice('New user created: @name', ['@name' => $user->get('name')->value]);
+
+      // Create or link to an existing account.
+      $firstname = $user->get('field_firstname')->value;
+      $lastname = $user->get('field_lastname')->value;
+      $siren = $user->get('field_siren')->value;
+      $account_name = $user->get('field_account')->value;
+
+      // Logging user field values
+      \Drupal::logger('custom_account')->notice('User details: First name: @firstname, Last name: @lastname, SIREN: @siren, Account: @account', [
+        '@firstname' => $firstname,
+        '@lastname' => $lastname,
+        '@siren' => $siren,
+        '@account' => $account_name,
+      ]);
+
+      if ($firstname && $lastname && $siren && $account_name) {
+        // Check if the account already exists.
+        $query = \Drupal::entityQuery('node')
+          ->condition('type', 'account')
+          ->condition('title', $account_name)
+          ->condition('field_siren', $siren)
+          ->accessCheck(false); // Add this line to fix the error
+
+        $nids = $query->execute();
+
+        if ($nids) {
+          // Account exists, link to the existing account.
+          $account_id = reset($nids);
+          \Drupal::logger('custom_account')->notice('Account already exists with ID: @id', ['@id' => $account_id]);
+        } else {
+          // Account does not exist, create a new one.
+          $account_title = $account_name;
+          \Drupal::logger('custom_account')->notice('Creating account with title: @title and SIREN: @siren', [
+            '@title' => $account_title,
+            '@siren' => $siren,
+          ]);
+
+          $account = Node::create([
+            'type' => 'account',
+            'title' => $account_title,
+            'field_siren' => $siren,
+          ]);
+
+          $account->save();
+
+          if ($account->id()) {
+            \Drupal::logger('custom_account')->notice('Account created with ID: @id', ['@id' => $account->id()]);
+            $account_id = $account->id();
+          } else {
+            \Drupal::logger('custom_account')->error('Failed to create account for user: @name', ['@name' => $user->get('name')->value]);
+            return;
+          }
+        }
+
+        // Assign the account ID to the user.
+        $user->set('field_accountid', $account_id);
+
+        // Add the 'expert' role to the user.
+        $user->addRole('expert');
+        $user->save();
+        \Drupal::logger('custom_account')->notice('User @name updated with account ID: @aid and role "expert"', ['@name' => $user->get('name')->value, '@aid' => $account_id]);
+      } else {
+        \Drupal::logger('custom_account')->error('Missing required user fields: First name, Last name, SIREN, or Account.');
+      }
+    }
+  }
+}
+?>

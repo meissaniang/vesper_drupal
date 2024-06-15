@@ -1,0 +1,29 @@
+uuid: 20d2da88-27fe-43fd-bf80-da5257783579
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accountid
+    - node.type.account
+    - node.type.category
+id: node.category.field_accountid
+field_name: field_accountid
+entity_type: node
+bundle: category
+label: accountId
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      account: account
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

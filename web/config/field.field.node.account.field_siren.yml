@@ -1,15 +1,14 @@
-uuid: 7724d1cc-0545-4d57-9d8b-a560a46de1ca
+uuid: a3288dcc-26fc-498d-b8e5-36840a19fcc1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_siren
-  module:
-    - user
-id: user.user.field_siren
+    - field.storage.node.field_siren
+    - node.type.account
+id: node.account.field_siren
 field_name: field_siren
-entity_type: user
-bundle: user
+entity_type: node
+bundle: account
 label: siren
 description: ''
 required: false

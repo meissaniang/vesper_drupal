@@ -1,0 +1,10 @@
+name: 'Custom Account Creation'
+type: module
+description: 'Automatically creates an account when a new user is registered.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:field
+  - drupal:user
+  - drupal:system

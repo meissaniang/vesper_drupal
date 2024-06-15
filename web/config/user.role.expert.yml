@@ -3,14 +3,36 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.category
     - node.type.page
+    - rest.resource.activate_user
+    - rest.resource.user_registration
+    - rest.resource.user_registrationpassword
   module:
+    - field_ui
     - jsonapi_permission_access
     - node
+    - rest
+    - simple_oauth
 id: expert
 label: Expert
 weight: 4
 is_admin: null
 permissions:
   - 'access jsonapi routes'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer user display'
+  - 'administer user form display'
+  - 'administer users'
+  - 'cancel account'
+  - 'create category content'
+  - 'delete own category content'
+  - 'edit own category content'
+  - 'restful post activate_user'
+  - 'restful post user_registration'
+  - 'restful post user_registrationpassword'
+  - 'view category revisions'
+  - 'view own simple_oauth entities'
   - 'view page revisions'
+  - 'view user email addresses'

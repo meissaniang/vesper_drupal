@@ -1,18 +1,18 @@
-uuid: d1177f02-4ee5-451d-8a59-1f715c24abce
+uuid: 305966c4-4a0d-4e1c-9e84-9b81b7b2db60
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_cabinet
+    - field.storage.user.field_account
   module:
     - user
-id: user.user.field_cabinet
-field_name: field_cabinet
+id: user.user.field_account
+field_name: field_account
 entity_type: user
 bundle: user
-label: cabinet
+label: account
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

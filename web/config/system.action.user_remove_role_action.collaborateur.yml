@@ -1,0 +1,14 @@
+uuid: 053738c1-56de-4ef2-b9db-1ab0337839f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.collaborateur
+  module:
+    - user
+id: user_remove_role_action.collaborateur
+label: 'Remove the Collaborateur role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: collaborateur

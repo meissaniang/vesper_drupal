@@ -1,12 +1,12 @@
-uuid: 3ac8000c-be7b-4012-9ffd-f01d48b76223
+uuid: 73647952-1d1b-4002-a1fc-0cb92d3468da
 langcode: en
 status: true
 dependencies:
   module:
-    - user
-id: user.field_siren
+    - node
+id: node.field_siren
 field_name: field_siren
-entity_type: user
+entity_type: node
 type: string
 settings:
   max_length: 255

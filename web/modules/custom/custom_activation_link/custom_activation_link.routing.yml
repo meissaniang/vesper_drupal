@@ -1,0 +1,9 @@
+custom_activation_link.activate_user:
+  path: '/api/activate-user'
+  defaults:
+    _format: 'json'
+    _resource: 'activate_user'
+  requirements:
+    _method: 'POST'
+  options:
+    _access_check: 'TRUE'

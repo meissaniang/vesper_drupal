@@ -1,22 +1,18 @@
-uuid: 387ea4a6-f80a-4772-ba7b-2cbc51dd7262
+uuid: 00348d44-eaba-4436-9d0a-6ce09e703672
 langcode: en
 status: true
 dependencies:
   module:
+    - custom_activation_link
     - serialization
-    - simple_oauth
     - user
-id: entity.user
-plugin_id: 'entity:user'
+id: activate_user
+plugin_id: activate_user
 granularity: resource
 configuration:
   methods:
-    - GET
     - POST
-    - DELETE
-    - PATCH
   formats:
     - json
   authentication:
-    - oauth2
     - cookie
