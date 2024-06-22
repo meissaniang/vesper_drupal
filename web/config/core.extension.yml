@@ -16,7 +16,6 @@ module:
   contextual: 0
   custom_account: 0
   custom_activation_link: 0
-  custom_cabinet: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
