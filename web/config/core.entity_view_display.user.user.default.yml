@@ -8,9 +8,9 @@ dependencies:
     - field.field.user.user.field_bio
     - field.field.user.user.field_categories
     - field.field.user.user.field_firstname
+    - field.field.user.user.field_image
     - field.field.user.user.field_lastname
     - field.field.user.user.field_managers
-    - field.field.user.user.field_photo
     - field.field.user.user.field_price
     - field.field.user.user.field_profession
     - field.field.user.user.field_sendacces
@@ -18,6 +18,7 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - file
     - image
     - user
 _core:
@@ -66,6 +67,14 @@ content:
     third_party_settings: {  }
     weight: 13
     region: content
+  field_image:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 27
+    region: content
   field_lastname:
     type: string
     label: above
@@ -81,17 +90,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 25
-    region: content
-  field_photo:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 22
     region: content
   field_price:
     type: number_decimal

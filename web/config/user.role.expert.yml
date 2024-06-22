@@ -10,6 +10,7 @@ dependencies:
     - rest.resource.user_registrationpassword
   module:
     - field_ui
+    - file
     - jsonapi_permission_access
     - node
     - rest
@@ -19,6 +20,7 @@ label: Expert
 weight: 4
 is_admin: null
 permissions:
+  - 'access files overview'
   - 'access jsonapi routes'
   - 'access user profiles'
   - 'administer account settings'

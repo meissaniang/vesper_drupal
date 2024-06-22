@@ -1,0 +1,27 @@
+uuid: f79b7e03-b517-4706-995e-d637e392c449
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_image
+  module:
+    - file
+    - user
+id: user.user.field_image
+field_name: field_image
+entity_type: user
+bundle: user
+label: image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  description_field: false
+field_type: file

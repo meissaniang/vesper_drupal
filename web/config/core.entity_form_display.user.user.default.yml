@@ -8,9 +8,9 @@ dependencies:
     - field.field.user.user.field_bio
     - field.field.user.user.field_categories
     - field.field.user.user.field_firstname
+    - field.field.user.user.field_image
     - field.field.user.user.field_lastname
     - field.field.user.user.field_managers
-    - field.field.user.user.field_photo
     - field.field.user.user.field_price
     - field.field.user.user.field_profession
     - field.field.user.user.field_sendacces
@@ -18,6 +18,7 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - file
     - image
     - user
 _core:
@@ -30,9 +31,13 @@ content:
   account:
     weight: -10
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_account:
     type: string_textfield
     weight: 18
@@ -77,6 +82,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_image:
+    type: file_generic
+    weight: 28
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
   field_lastname:
     type: string_textfield
     weight: 9
@@ -94,14 +106,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_photo:
-    type: image_image
-    weight: 23
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
   field_price:
     type: number
@@ -136,9 +140,13 @@ content:
   language:
     weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image_image
     weight: -1
