@@ -9,7 +9,7 @@ DRUPAL_ROOT ?= /opt/drupal/web
 .PHONY: up
 up:
 	@echo "Starting up containers for $(PROJECT_NAME)..."
-	docker-compose -f docker-compose-prod.yml up -d --remove-orphans --build
+	docker-compose -f docker-compose-prod.yml up -d --remove-orphans
 
 ## up	:	Start up containers for production.
 .PHONY: dev-up
@@ -21,7 +21,8 @@ dev-up:
 .PHONY: local-up
 local-up:
 	@echo "Starting up containers for $(PROJECT_NAME)..."
-	docker-compose -f docker-compose-local.yml up -d --remove-orphans --build
+	docker build -t $(PROJECT_NAME)_frankenphp .
+	docker-compose -f docker-compose-local.yml up -d --remove-orphans
 
 .PHONY: mutagen
 mutagen:
