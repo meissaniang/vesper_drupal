@@ -286,7 +286,6 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
 
 /**
  * Deployment identifier.
@@ -881,3 +880,18 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+$databases['default']['default'] = array (
+  'driver' => getenv('DRUPAL_DB_DRIVER'),
+  'host' => getenv('DRUPAL_DB_HOST'),
+  'port' => getenv('DRUPAL_DB_PORT'),
+  'database' => getenv('DRUPAL_DB_NAME'),
+  'username' => getenv('DRUPAL_DB_USERNAME'),
+  'password' => getenv('DRUPAL_DB_PASSWORD'),
+  'prefix' => '',
+  'namespace' => 'Drupal\\pgsql\\Driver\\Database\\pgsql',
+  'autoload' => 'core/modules/pgsql/src/Driver/Database/pgsql/',
+  'collation' => 'utf8mb4_general_ci',
+);
+$settings['config_sync_directory'] = 'config';
+$settings['hash_salt'] = getenv('DRUPAL_HASH_SALT');
+$config['system.logging']['error_level'] = 'verbose';

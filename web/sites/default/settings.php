@@ -88,7 +88,7 @@
  * ];
  * @endcode
  */
-$databases = [];
+
 
 /**
  * Customizing database settings.
@@ -286,7 +286,6 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'JziS2b6jD6gV-gzqUw_LOWBCs81oRcu8LfrU7rV-cxHN10VpEzgZhRcnSbcqZfobYypi8k4KwQ';
 
 /**
  * Deployment identifier.
@@ -885,12 +884,14 @@ $databases['default']['default'] = array (
   'database' => getenv('DB_NAME'),
   'username' => getenv('DB_USER'),
   'password' => getenv('DB_PASSWORD'),
-  'prefix' => '',
   'host' => getenv('DB_HOST'),
   'driver' => getenv('DB_DRIVER'),
   'port' => getenv('DB_PORT'),
+  'prefix' => '',
   'namespace' => 'Drupal\\pgsql\\Driver\\Database\\pgsql',
   'autoload' => 'core/modules/pgsql/src/Driver/Database/pgsql/',
+  'collation' => 'utf8mb4_general_ci',
 );
 $settings['config_sync_directory'] = 'config';
+$settings['hash_salt'] = getenv('DRUPAL_HASH_SALT');
 $config['system.logging']['error_level'] = 'verbose';
