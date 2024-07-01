@@ -13,7 +13,9 @@
 
 {$CADDY_EXTRA_CONFIG}
 
-{$SERVER_NAME:localhost} {
+
+{$PROJECT_BASE_URL:localhost} {
+	tls ./config/docker/certs/localhost.crt ./config/docker/certs/localhost.key
 	root * web/
 	encode zstd br gzip
 

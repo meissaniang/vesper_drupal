@@ -5,11 +5,16 @@ default: up
 COMPOSER_ROOT ?= /opt/drupal
 DRUPAL_ROOT ?= /opt/drupal/web
 
+## generate ssl for local environnement
+.PHONY: generate-localhost-certs
+generate-localhost-certs:
+	sh generate-localhost-certs.sh
+
 ## up	:	Start up containers for production.
 .PHONY: up
 up:
 	@echo "Starting up containers for $(PROJECT_NAME)..."
-	docker-compose -f docker-compose-prod.yml up -d --remove-orphans
+	docker-compose -f docker-compose-prod.yml up -d --remove-orphans --build
 
 ## up	:	Start up containers for production.
 .PHONY: dev-up
@@ -21,12 +26,9 @@ dev-up:
 .PHONY: local-up
 local-up:
 	@echo "Starting up containers for $(PROJECT_NAME)..."
+	@$(MAKE) -f Makefile_frankenphp generate-localhost-certs
 	docker build -t $(PROJECT_NAME)_frankenphp .
 	docker-compose -f docker-compose-local.yml up -d --remove-orphans
-
-.PHONY: mutagen
-mutagen:
-	mutagen-compose up
 
 ## down	:	Stop containers.
 .PHONY: down

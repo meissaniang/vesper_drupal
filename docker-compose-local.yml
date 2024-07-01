@@ -3,7 +3,7 @@ services:
     image: "${PROJECT_NAME}_frankenphp"
     container_name: "${PROJECT_NAME}_frankenphp"
     ports:
-      - "80:80"
+      - "8000:80"
       - "443:443"
     volumes:
       - ./:/opt/drupal:cached
@@ -17,6 +17,8 @@ services:
       DB_NAME: $DB_NAME
       DB_DRIVER: $DB_DRIVER
       DRUPAL_HASH_SALT: ${DRUPAL_HASH_SALT}
+      PROJECT_BASE_URL: ${PROJECT_BASE_URL}
+      PROJECT_PORT: ${PROJECT_PORT}
     restart: always
 
   postgres:
